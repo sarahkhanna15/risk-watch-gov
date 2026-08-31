@@ -39,9 +39,9 @@ function Dashboard() {
   const bySector = Object.values(
     projects.reduce<Record<string, { sector: string; overrun: number; count: number }>>(
       (acc, p) => {
-        acc[p.sector] ??= { sector: p.sector, overrun: 0, count: 0 };
-        acc[p.sector].overrun += costOverrunAmt(p);
-        acc[p.sector].count += 1;
+        const row = (acc[p.sector] ??= { sector: p.sector, overrun: 0, count: 0 });
+        row.overrun += costOverrunAmt(p);
+        row.count += 1;
         return acc;
       },
       {},
