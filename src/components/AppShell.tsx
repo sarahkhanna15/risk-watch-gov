@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 
 const nav = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard, desc: "Portfolio overview" },
-  { to: "/", label: "Projects", icon: FolderKanban, desc: "Risk register" },
+  { to: "/projects", label: "Projects", icon: FolderKanban, desc: "Risk register" },
 ] as const;
 
 export function AppShell({ children }: { children: ReactNode }) {
